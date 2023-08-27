@@ -1,5 +1,6 @@
 import { Typography } from "@mui/material";
 import logo from "../images/logoBlack.png";
+import FooterSmallScreen from "./FooterSmallScreen";
 
 function Footer() {
   return (
@@ -29,12 +30,6 @@ function Footer() {
               </a>
             </ul>
           </div>
-
-          {/* <div className="footer-column">
-      <Typography className='footerTitle'>Divided</Typography>
-      <ul>
-      </ul>
-    </div> */}
 
           <div className="footer-column">
             <Typography className="footerTitle">KURUMSAL BİLGİLER</Typography>
@@ -100,7 +95,6 @@ function Footer() {
               </a>
             </ul>
           </div>
-
           <div className="footer-column">
             <Typography className="footerTitle">
               H&M MEMBER OL VE %10 İNDİRİM KAZAN
@@ -116,6 +110,7 @@ function Footer() {
             </ul>
           </div>
         </div>
+          <FooterSmallScreen/>
         <div className="lowerFooter">
           <div className="footerIcons">
             <a href="#">
