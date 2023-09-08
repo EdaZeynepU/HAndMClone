@@ -3,7 +3,7 @@
     padding: 0;
     font-family: 'Raleway', sans-serif;
     font-size: 0.99em;
-    /* box-sizing: border-box; */
+    box-sizing: border-box;
 }
 
 body, .bannerButtons button{
@@ -65,17 +65,22 @@ a:hover{
 }
 
 .lowerNav {
+    /* width: 950px; */
     width: 1100px;
     margin: 70px auto 20px auto !important;
     list-style: none;
     display: flex;
     /*justify-content: space-around; */   
-    
     align-items: center;
 }
+
 .lowerNav .list-item{
     width: fit-content;
     padding: 5px 25px;
+}
+
+.rightUpperNav .list-item{
+    width: max-content;
 }
 
 .upperFooter{
@@ -137,12 +142,6 @@ a:hover{
     padding: 30px 0;
 }
 
-.bannerButtons{
-    margin-left: 10px;
-    width: fit-content;
-    margin: 25px auto 0 auto;
-}
-
 .bannerButtons button, .photoBanner button{
     margin-right: 10px;
     height: 40px;
@@ -199,6 +198,10 @@ a:hover{
     height: 140px;
 }
 
+.magazineCardWrapper {
+    display: flex;
+    justify-content: center;
+}
 .magazineCardWrapper .magazineCard div{
     text-align: center;
     line-height:0.8em;
@@ -216,7 +219,7 @@ a:hover{
     flex-direction: column;
     align-items: center;
     padding: 60px 0;
-    margin: 40px;
+    margin: 40px 0;
 }
 
 .NavbarSubLinksbg{
@@ -265,10 +268,15 @@ a:hover{
     font-size: 1.2rem;
 }
 
+.navbar input:focus{
+    outline: none;
+}
+
 li:hover .NavbarSubLinksbg{
     opacity: 1 !important;
     visibility: visible;
 }
+
 
 .navbarSmallInside{
     display: flex;
@@ -279,21 +287,42 @@ li:hover .NavbarSubLinksbg{
 
 .upperFooterSmallScreen{
     visibility: hidden;
-    width: 0;
+}
+
+
+.navbarSmall{
     height: 0;
 }
 
-@media only screen and (max-width: 1350px){
-    .navbar{
-        visibility: hidden;
-        height: 0px;
+.cart-hover:hover .cart-hover-child{
+    visibility: visible;
+    
+}
+
+
+@media only screen and (max-width: 1150px){
+
+}
+
+@media only screen and (max-width: 1500px){
+    .lowerNav{
+        width: 950px;
     }
-    .navbarSmall{
-        visibility:visible !important;
+    .lowerNav .list-item{
+        padding: 5px 10px !important;
     }
 }
 
 @media only screen and (max-width: 1200px){
+    .navbarSmall{
+        visibility:visible !important;
+        height: fit-content !important;
+    }
+    .navbar{
+        visibility: hidden;
+        height: 0;
+    }
+    /* smallscreen footer starts */
     .upperFooter{
         visibility: hidden;
         width: 0;
@@ -315,18 +344,25 @@ li:hover .NavbarSubLinksbg{
         text-align: center;
         font-size: 1.2em;
     }
-    
     .accordion-item{
         padding-bottom: 10px;
     }
     .accordion-subitem{
         padding: 8px 10px;
-        /* font-size: 1em; */
     }
     .accordion-list{
         list-style: none;
     }
     .accordion-title:hover .acordion-title-writing{
         color: black !important;
+    }
+    /* smallscreen footer ends */
+    .navbarHelper{
+        width: 80% !important;
+    }
+    .canBeUnvisible{
+        visibility: hidden;
+        height: 0;
+        width: 0;
     }
 }

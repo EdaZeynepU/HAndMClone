@@ -25,7 +25,7 @@ const  Banner: React.FC<BannerProps> = (props) => {
         <Typography component="div" variant='h4' style={{textAlign:"center",color:"white"}}>
             { props.title }
         </Typography>
-        <div className="bannerButtons" >
+        <div className="bannerButtons" style={{display:"flex",alignItems:"center",justifyContent:"center"}}>
         {linkArray.map((link) => (
           <a href={link.url}>
             <button>{link.title}</button>

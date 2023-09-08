@@ -5,6 +5,7 @@ import PhotoBanner1 from "../images/photoBanner1.png";
 import PhotoBanner2 from "../images/photoBanner2.png";
 import Magazine from "../components/Magazine";
 import BannerDiscount from "../components/BannerDiscount";
+import ImageSlider from "../components/ImageSlider/ImageSlider";
 
 function HomePage() {
   return (
@@ -23,6 +24,7 @@ function HomePage() {
       bgColors={["#ebc0cc","#ffd372"]}  
       />
       <PhotoBanner link="#" linkTitle="Şimdi satın al" subTitle="Spor salonu mu, antrenman mı, koşu mu? Kendine özel stil ve işlevselliği bul." title="Tayt rehberi" image={PhotoBanner0} titleHelp="" />
+      <ImageSlider />
       <PhotoBanner link="#" linkTitle="Şimdi satın al" subTitle="" title="Yeni sezon koleksiyonu" image={PhotoBanner1} titleHelp="bghelp" />
       <BannerDiscount />
       <PhotoBanner link="#" linkTitle="Şimdi satın al" subTitle="Her stile uygun yastıklarla kanepene şık bir güncelleme yap." title="Trend: Kırlentler!" image={PhotoBanner2} titleHelp="bghelp" />

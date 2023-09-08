@@ -185,7 +185,6 @@ const NavbarSmallScreen: React.FC = () => {
       <NavbarHelper />
       <Stack>
       <Drawer
-          // container={container}
           variant="temporary"
           open={mobileOpen}
           onClose={handleDrawerToggle}

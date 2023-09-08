@@ -3,7 +3,7 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Fade from "@mui/material/Fade";
 import logo from "../images/logo.png";
-import { Typography } from "@mui/material";
+import { Box, Skeleton, TextField, Typography } from "@mui/material";
 import NavbarHelper from "./NavbarHelper";
 import NavbarSubLinks from "./NavbarSubLinks";
 import BabyData from "../datas/BabyData";
@@ -15,6 +15,10 @@ import SustainabilityData from "../datas/SustainabilityData";
 import WomenData from "../datas/WomenData";
 import DividedData from "../datas/DividedData";
 import MenData from "../datas/MenData";
+import { useSelector } from "react-redux";
+import { useAppSelector } from "../store";
+import NavbarHover from "./Loading/NavbarHover";
+// import { store } from "../store";
 
 const NavBar: React.FC = () => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -27,8 +31,11 @@ const NavBar: React.FC = () => {
     setAnchorEl(null);
   };
 
+  
+  const { cartItems } = useAppSelector((store) => store.cart);
+
   return (
-    <div className="navbar" style={{background:"#faf9f8"}}>
+    <div className="navbar" style={{background:"#faf9f8",position:"relative"}}>
       <div className="upperNav">
         <ul className="leftUpperNav">
           <a href="#">
@@ -71,13 +78,14 @@ const NavBar: React.FC = () => {
           src={logo}
           alt="logo"
           width="81"
-          height="54"
+          height="81"
           style={{ paddingTop: "30px" }}
         />
         <ul className="rightUpperNav">
           <a href="#">
-            <li className="list-item">
+            <li className="list-item cart-hover" >
               <i className="fa-regular fa-user fa-2xl"></i>Oturum Aç
+              <NavbarHover isCart={false}/>
             </li>
           </a>
           <a href="#">
@@ -86,13 +94,15 @@ const NavBar: React.FC = () => {
             </li>
           </a>
           <a href="#">
-            <li className="list-item">
+            <li className="list-item cart-hover">
               <i className="fa-solid fa-cart-shopping fa-2xl"></i>
-              Alışveriş Sepeti ({cartItemCount})
+              Alışveriş Sepeti ({cartItems.length})
+              <NavbarHover isCart={true}/>
             </li>
           </a>
         </ul>
       </div>
+      <div>
       <ul className="lowerNav"><a href="#">
           <li className="list-item">
         Kadın
@@ -137,6 +147,13 @@ const NavBar: React.FC = () => {
           </li>
         </a>
       </ul>
+      
+      <Box style={{color: "#000000",position:"absolute",right:"10px",top:"160px",display: 'flex', alignItems: 'center',borderBottom:"1px solid black"}}>
+      <i className="fa-solid fa-magnifying-glass fa-xl" ></i>
+        <input type="text" placeholder="Ürün ara" style={{padding:"10px",border:"none",background:"transparent"}}/>
+      </Box>
+      </div>
+      
       <NavbarHelper />
     </div>
   );
